@@ -1,0 +1,35 @@
+.location, .temperature, .secondary {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.location {
+  flex: 1;
+  border: 0;
+}
+
+.location input {
+  border: none;
+  background: inherit;
+  color: inherit;
+  font: inherit;
+}
+
+.temperature {
+  flex: 2;
+  font-size: 6rem;
+}
+
+.secondary {
+  flex:1;
+  justify-content: space-around;
+}
+
+.humidity, .precipitation, .wind {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

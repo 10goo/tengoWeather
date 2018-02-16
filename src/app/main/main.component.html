@@ -1,0 +1,9 @@
+<div class="location">
+    <input type="text" placeholder="Location" [(ngModel)]="location" (blur)="getWeather()">
+  </div>
+  <div class="temperature">{{ weather.temp_c | number:'1.0-0' }}&deg;C</div>
+  <div class="secondary">
+    <div class="wind"><span>Wind:</span> {{ weather.wind_kph }} km/h</div>
+    <div class="humidity"><span>Humidity:</span> {{ weather.humidity }} %</div>
+    <div class="precipitation"><span>Precipitation:</span> {{ weather.precip_mm }} mm</div>
+</div>
