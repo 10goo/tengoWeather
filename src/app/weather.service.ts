@@ -12,19 +12,23 @@ const httpOptions = {
 @Injectable()
 export class WeatherService {
 
-  private weatherUrl = 'http://api.apixu.com/v1/current.json?';
-  private key = '';
+  private weatherUrl = 'http://api.apixu.com/v1/current.json?key=';
+  private key = 'd77b019ad17f4ddaa7d92036181402';
 
 
   constructor( private  http: HttpClient ) { }
 
-  getWeather(location: string) {
-    return this.http.get(this.weatherUrl + 'key=' + this.key + '&q=' + location)
-      .toPromise()
-      .then( (response) => {
-        return response;
-      } );
-
+  getWeather(location: string): Observable<any> {
+    return this.http.get(this.weatherUrl + this.key + '&q=' + location);
   }
+
+  // getWeather(location: string) {
+  //   return this.http.get(this.weatherUrl + this.key + '&q=' + location)
+  //     .toPromise()
+  //     .then( (response) => {
+  //       return response;
+  //     } );
+
+  // }
 
 }

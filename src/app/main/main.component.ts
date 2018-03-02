@@ -12,10 +12,16 @@ export class MainComponent implements OnInit {
   location = 'miercurea-ciuc';
 
   weather = {
-    temp_c : '',
-    wind_kph : '',
-    humidity: '',
-    precip_mm: ''
+    current: {
+      condition: {
+        icon: '',
+        text: ''
+      },
+      temp_c : '',
+      wind_kph : '',
+      humidity: '',
+      precip_mm: ''
+    }
   };
 
   constructor(private weatherService: WeatherService) { }
@@ -25,11 +31,15 @@ export class MainComponent implements OnInit {
   }
 
   getWeather(): void {
-    this.weatherService.getWeather(this.location).then( (data) => {
-      this.weather = data.current;
-     } ).catch((err) => {
-        console.log('Location unknown. Try another location');
-     });
+    this.weatherService.getWeather(this.location).subscribe(
+      httpWeather => this.weather = httpWeather
+    );
+
+    // this.weatherService.getWeather(this.location).then( (data) => {
+    //   this.weather = data.current;
+    //  } ).catch((err) => {
+    //     console.log('Location unknown. Try another location');
+    //  });
   }
 
 }
