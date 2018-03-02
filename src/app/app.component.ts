@@ -7,7 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  overlayActive = true;
 
+    toggleOverlay(): void {
+      this.overlayActive = !this.overlayActive;
+    }
 
 
 }
