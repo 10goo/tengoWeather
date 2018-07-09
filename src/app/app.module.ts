@@ -7,14 +7,12 @@ import { FormsModule } from '@angular/forms'
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { WeatherService } from './weather.service';
-import { OverlayComponent } from './overlay/overlay.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    OverlayComponent
   ],
   imports: [
     BrowserModule,

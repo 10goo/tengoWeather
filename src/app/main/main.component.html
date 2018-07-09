@@ -1,10 +1,9 @@
 <div class="location">
     <input type="text" placeholder="Location" [(ngModel)]="location" (blur)="getWeather()">
   </div>
+  <img src={{weather.current.condition.icon}} alt={{weather.current.condition.text}} class="weather-icon">
   <div class="temperature">
     {{ weather.current.temp_c | number:'1.0-0' }}&deg;C
-    <img src={{weather.current.condition.icon}} alt={{weather.current.condition.text}} class="weather-icon">
-
   </div>
   <div class="secondary">
     <div class="wind"><span>Wind:</span> {{ weather.current.wind_kph }} km/h</div>
